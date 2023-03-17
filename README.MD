@@ -1,7 +1,7 @@
 ﻿# FFMpegDecoder
 > FFMpegDecoder is the IP to SDI decoder based on the ffmpeg.
 
-[![.NET](https://github.com/freehand-dev/FFMpegEncoder/actions/workflows/dotnet.yml/badge.svg)](https://github.com/freehand-dev/FFMpegDecoder/actions/workflows/dotnet.yml)
+[![.NET](https://github.com/freehand-dev/FFMpegDecoder/actions/workflows/dotnet.yml/badge.svg)](https://github.com/freehand-dev/FFMpegDecoder/actions/workflows/dotnet.yml)
 
 
 ## Features

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -11,10 +12,36 @@ namespace FFMpegDecoder.Models
     {
         public enum DecklinkOutputFormat
         {
+            PASS,
+
+            /// <summary>
+            /// pal             720x576 at 25000/1000 fps(interlaced, upper field first)
+            /// </summary>
+            UYVY422_576i50,
+
+            /// <summary>
+            ///  Hi50            1920x1080 at 25000/1000 fps(interlaced, upper field first)
+            /// </summary>
             UYVY422_1920i50,
+
+            /// <summary>
+            /// hp50            1280x720 at 50000/1000 fps
+            /// </summary>
             UYVY422_720p25,
+
+            /// <summary>
+            /// hp50            1280x720 at 50000/1000 fps
+            /// </summary>
             UYVY422_720p50,
+
+            /// <summary>
+            /// Hp25            1920x1080 at 25000/1000 fps
+            /// </summary>
             UYVY422_1920p25,
+
+            /// <summary>
+            /// Hp50            1920x1080 at 50000/1000 fps
+            /// </summary>
             UYVY422_1920p50
         }
         public string? Progress { get; set; }
@@ -106,6 +133,12 @@ namespace FFMpegDecoder.Models
 
             switch (OutputFormat)
             {
+                case DecklinkOutputFormat.UYVY422_576i50:
+                    args.Add($"-field_order tb");
+                    args.Add("-pix_fmt uyvy422");
+                    args.Add("-s 720x576");
+                    args.Add("-r 25000/1000");
+                    break;
                 case DecklinkOutputFormat.UYVY422_1920i50:
                     args.Add($"-field_order tb");
                     args.Add("-pix_fmt uyvy422");
@@ -136,6 +169,9 @@ namespace FFMpegDecoder.Models
                     args.Add("-pix_fmt uyvy422");
                     args.Add("-s 1920x1080");
                     args.Add("-r 50000/1000");
+                    break;
+                default:
+                    args.Add("-pix_fmt uyvy422");
                     break;
             }
 

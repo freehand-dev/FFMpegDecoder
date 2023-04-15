@@ -35,7 +35,6 @@
     },
     "Output": {
       "Device": "DeckLink SDI (1)",
-      "Format?": "UYVY422_1920i50 or UYVY422_720p25 or UYVY422_720p50 or UYVY422_1920p25 or UYVY422_1920p50",
       "Format": "UYVY422_1920i50"
     },
     "FFMpeg": {

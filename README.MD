@@ -71,4 +71,12 @@ To start the service, you can use the `FFMpegDecoder` executable as the applicat
 
 
 
+### Decoder.Output.Format
+- PASS
+- UYVY422_1920i50
+- UYVY422_720p25
+- UYVY422_720p50
+- UYVY422_1920p25
+- UYVY422_1920p50
+- UYVY422_576i50
 
